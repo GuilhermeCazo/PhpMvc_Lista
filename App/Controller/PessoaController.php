@@ -13,7 +13,7 @@ use App\Model\PessoaModel;
  * buscar algo no banco de dados), redirecionar o usuário de rota, ou mesmo,
  * chamar outra Controller.
  */
-class PessoaController 
+class PessoaController extends Controller
 {
     /**
      * Os métodos index serão usados para devolver uma View.
@@ -22,12 +22,14 @@ class PessoaController
     public static function index()
     {
         // Para saber mais sobre include , leia: https://www.php.net/manual/pt_BR/function.include.php
-        include 'Model/PessoaModel.php'; // inclusão do arquivo model.
+       //include 'Model/PessoaModel.php'; // inclusão do arquivo model.
         
         $model = new PessoaModel(); // Instância da Model
         $model->getAllRows(); // Obtendo todos os registros, abastecendo a propriedade $rows da model.
 
-        include 'View/modules/Pessoa/ListaPessoa.php'; // Include da View, propriedade $rows da Model pode ser acessada na View
+
+        parent::render('Pessoa/listaPessoa', $model);
+       // include 'View/modules/Pessoa/ListaPessoa.php'; // Include da View, propriedade $rows da Model pode ser acessada na View
     }
 
 
@@ -43,7 +45,7 @@ class PessoaController
             $model = $model->getById( (int) $_GET['id']); // Typecast e obtendo o model preenchido vindo da DAO.
             // Para saber mais sobre Typecast, leia: https://tiago.blog.br/type-cast-ou-conversao-de-tipos-do-php-isso-pode-te-ajudar-muito/
 
-        include 'View/modules/Pessoa/FormPessoa.php'; // Include da View. Note que a variável $model está disponível na View.
+            parent::render('Pessoa/FormPessoa', $model); // Include da View. Note que a variável $model está disponível na View.
     }
 
 

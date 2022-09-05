@@ -6,13 +6,10 @@ namespace App\Model;
 use App\DAO\CategoriaProdutoDAO;
 
 
-class CategoriaProdutoModel
+class CategoriaProdutoModel extends Model
 {
 
     public $id, $nome;
-
-
-    public $rows;
 
 
     public function save()

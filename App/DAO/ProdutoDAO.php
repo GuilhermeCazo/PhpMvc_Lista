@@ -8,26 +8,13 @@ use \PDO;
 
 /** A criação da Classe DAO, feita para acionar 
  * os comandos responsáveis para acessar o banco de dade */
-class ProdutoDAO
+class ProdutoDAO extends DAO
 {
-
-    
-    /** Criação da váriavel de conexão com o BD*/
-    private $conexao;
-
-
-/** método construtor, usado para que toda vez que for chamado
- * ele acionará o código embaixo, no caso o método "__construct" faz com que toda vez que o programa é iniciado ele ativa
- */
+   
     public function __construct()
     {
-        /** Aqui é o direcionamento para qual server do Mysql que será utilizado pelio BD */
-        $dsn = "mysql:host=localhost:3307;dbname=db_mvc";
-
-        
-        $this->conexao = new PDO($dsn, 'root', 'etecjau');
+        parent::__construct();
     }
-
 /** Método responsável por inserir um novo arquivo no BD utilizando o método INSERT
  * ele vai ser instânciado na Model para depois ser intanciado aqui.
  */
@@ -92,7 +79,7 @@ class ProdutoDAO
         */
     public function selectById(int $id)
     {
-        include_once 'Model/ProdutoModel.php';
+        //include_once 'Model/ProdutoModel.php';
 
         $sql = "SELECT * FROM Produto WHERE id = ?";
 
@@ -100,7 +87,7 @@ class ProdutoDAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("ProdutoModel"); 
+        return $stmt->fetchObject("App\Model\ProdutoModel"); 
 
 
     }

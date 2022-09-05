@@ -5,13 +5,11 @@ namespace App\Model;
 use App\DAO\ProdutoDAO;
 //Criação da Classe Produto Model, para ser a ponte de dados entre a DAO e a CONTROLLER
 
-class ProdutoModel
+class ProdutoModel extends Model
 {
 /** Criação das variáveis de acordo com a tabela*/
     public $id, $descricao, $id_categoria, $preco_venda, $preco_compra;
 
-/** Propriedade que armazenas os dados retirados do BD */
-    public $rows;
 
 /** O Método criado para salvar no BD o que for preenchido na MODEL*/
     public function save()

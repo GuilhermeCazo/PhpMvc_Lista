@@ -5,15 +5,16 @@ namespace App\Controller;
 use App\Model\ProdutoModel;
 
 //Criação da Classe Controller 
-class ProdutoController 
+class ProdutoController extends Controller
 {
     public static function index()
     {
-        include 'Model/ProdutoModel.php'; 
+        
         
         $model = new ProdutoModel(); 
         $model->getAllRows(); 
-        include 'View/modules/Produto/ListaProduto.php';
+        
+        parent::render('Produto/ListaProduto', $model);
 
     }
 
@@ -22,13 +23,13 @@ class ProdutoController
     {
         //echo "oi";
 
-        include 'Model/ProdutoModel.php'; 
+        
         $model = new ProdutoModel();
 
         if(isset($_GET['id'])) 
             $model = $model->getById( (int) $_GET['id']); 
         
-        include 'View/modules/Produto/FormProduto.php'; 
+            parent::render('Produto/FormProduto', $model);
     }
 
 

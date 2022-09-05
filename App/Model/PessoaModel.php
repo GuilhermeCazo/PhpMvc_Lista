@@ -8,19 +8,13 @@ use App\DAO\PessoaDAO;
  * Também é atribuído a Model a validação dos dados da View e controle de acesso aos métodos
  * da DAO.
  */
-class PessoaModel
+class PessoaModel extends Model
 {
     /**
      * Declaração das propriedades conforme campos da tabela no banco de dados.
      * para saber mais sobre Propriedades de Classe, leia: https://www.php.net/manual/pt_BR/language.oop5.properties.php
      */
     public $id, $nome, $cpf, $data_nascimento, $rg, $sexo, $rua, $numero, $id_cidade, $telefone;
-
-
-    /**
-     * Propriedade que armazenará o array retornado da DAO com a listagem das pessoas.
-     */
-    public $rows;
 
 
     /**

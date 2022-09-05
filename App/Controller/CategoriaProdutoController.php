@@ -4,16 +4,16 @@ namespace App\Controller;
 
 use App\Model\CategoriaProdutoModel;
 
-class CategoriaProdutoController 
+class CategoriaProdutoController extends Controller
 {
     public static function index()
     {
-        include 'Model/CategoriaProdutoModel.php'; 
+        
         
         $model = new CategoriaProdutoModel(); 
         $model->getAllRows(); 
-        include 'View/modules/CategoriaProduto/ListaCategoriaProduto.php';
-
+      
+        parent::render('CategoriaProduto/FormCategoriaProduto', $model);
     }
 
 
@@ -21,13 +21,13 @@ class CategoriaProdutoController
     {
         //echo "oi";
 
-        include 'Model/CategoriaProdutoModel.php'; 
+        
         $model = new CategoriaProdutoModel();
 
         if(isset($_GET['id'])) 
             $model = $model->getById( (int) $_GET['id']); 
         
-        include 'View/modules/CategoriaProduto/FormCategoriaProduto.php'; 
+            parent::render('CategoriaProduto/FormCategoriaProduto', $model);
     }
 
 

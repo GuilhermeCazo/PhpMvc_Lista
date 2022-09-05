@@ -6,13 +6,15 @@ spl_autoload_register(function ($nome_da_classe) {
 
     //echo "Tentou dar include de: " . $nome_da_classe;
 
-    $classe = dirname(__FILE__) . '/../' . $nome_da_classe . ".php";
+    $arquivo = BASEDIR . "/" . $nome_da_classe . ".php";
 
-    if(file_exists($classe))
+    if(file_exists($arquivo))
     {
-        include $classe;
+        include $arquivo;
     } else 
-        echo 'Arquivo não encontrado: ' . $classe;
+       exit ('Arquivo não encontrado: ' . $arquivo . "<br/>");
+
+    });
 
 
     //ele producz pra mim o arquiivo q eu queo dentor do mvc
@@ -39,4 +41,3 @@ spl_autoload_register(function ($nome_da_classe) {
     }*/
 
     //include 'classes/' . $class . '.class.php';
-});
