@@ -38,7 +38,7 @@ class PessoaController extends Controller
      */
     public static function form()
     {
-        include 'Model/PessoaModel.php'; // inclusão do arquivo model.
+      //  include 'Model/PessoaModel.php'; // inclusão do arquivo model.
         $model = new PessoaModel();
 
         if(isset($_GET['id'])) // Verificando se existe uma variável $_GET
@@ -54,7 +54,7 @@ class PessoaController extends Controller
      */
     public static function save()
     {
-       include 'Model/PessoaModel.php'; // inclusão do arquivo model.
+      // include 'Model/PessoaModel.php'; // inclusão do arquivo model.
 
        // Abaixo cada propriedade do objeto sendo abastecida com os dados informados
        // pelo usuário no formulário (note o envio via POST)
@@ -82,7 +82,7 @@ class PessoaController extends Controller
      */
     public static function delete()
     {
-        include 'Model/PessoaModel.php'; // inclusão do arquivo model.
+       // include 'Model/PessoaModel.php'; // inclusão do arquivo model.
 
         $model = new PessoaModel();
 

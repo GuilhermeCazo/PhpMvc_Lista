@@ -23,7 +23,7 @@ class PessoaModel extends Model
      */
     public function save()
     {
-        include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
+        //include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
 
         // Instância do objeto e conexão no banco de dados via construtor
         $dao = new PessoaDAO(); 
@@ -50,7 +50,7 @@ class PessoaModel extends Model
      */
     public function getAllRows()
     {
-        include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
+        // include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
         
         // Instância do objeto e conexão no banco de dados via construtor
         $dao = new PessoaDAO();
@@ -68,7 +68,7 @@ class PessoaModel extends Model
      */
     public function getById(int $id)
     {
-        include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
+        // include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
 
         $dao = new PessoaDAO();
 
@@ -93,7 +93,7 @@ class PessoaModel extends Model
      */
     public function delete(int $id)
     {
-        include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
+      //  include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
 
         $dao = new PessoaDAO();
 
