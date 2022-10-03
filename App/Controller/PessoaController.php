@@ -23,7 +23,8 @@ class PessoaController extends Controller
     {
         // Para saber mais sobre include , leia: https://www.php.net/manual/pt_BR/function.include.php
        //include 'Model/PessoaModel.php'; // inclusão do arquivo model.
-        
+       parent::isAuthenticated();
+
         $model = new PessoaModel(); // Instância da Model
         $model->getAllRows(); // Obtendo todos os registros, abastecendo a propriedade $rows da model.
 
@@ -38,6 +39,9 @@ class PessoaController extends Controller
      */
     public static function form()
     {
+
+      parent::isAuthenticated();
+
       //  include 'Model/PessoaModel.php'; // inclusão do arquivo model.
         $model = new PessoaModel();
 
@@ -54,6 +58,9 @@ class PessoaController extends Controller
      */
     public static function save()
     {
+
+      parent::isAuthenticated();
+
       // include 'Model/PessoaModel.php'; // inclusão do arquivo model.
 
        // Abaixo cada propriedade do objeto sendo abastecida com os dados informados
@@ -82,6 +89,9 @@ class PessoaController extends Controller
      */
     public static function delete()
     {
+
+      parent::isAuthenticated();
+      
        // include 'Model/PessoaModel.php'; // inclusão do arquivo model.
 
         $model = new PessoaModel();

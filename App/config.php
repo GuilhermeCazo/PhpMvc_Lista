@@ -2,7 +2,7 @@
 
 // definindo as constantes
 define('BASEDIR', dirname(__FILE__, 2));
-define('VIEWS', BASEDIR . '/View/modules/');
+define('VIEWS', BASEDIR . 'App/View/modules/');
 
 
  //outras constantases

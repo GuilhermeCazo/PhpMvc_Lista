@@ -5,6 +5,7 @@ use App\Controller\
     PessoaController,
     ProdutoController,
     CategoriaProdutoController,
+    LoginController,
 };
 
 
@@ -17,6 +18,17 @@ switch($url)
         echo "página inicial";
     break;
 
+    case '/login':
+        LoginController::index();
+    break;
+
+    case '/login/auth':
+        LoginController::auth();
+    break;
+
+    case '/logout':
+        LoginController::logout();
+    break;
 
 
     case '/pessoa':
