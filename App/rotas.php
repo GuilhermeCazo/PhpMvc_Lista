@@ -6,6 +6,7 @@ use App\Controller\
     ProdutoController,
     CategoriaProdutoController,
     LoginController,
+    CadastroController,
 };
 
 
@@ -29,6 +30,20 @@ switch($url)
     case '/logout':
         LoginController::logout();
     break;
+
+
+    
+    //Cadastro
+
+    case '/cadastro/form' :
+        CadastroController::form();
+    break;
+
+    case '/cadastro/form/save' :
+        CadastroController::save();
+    break;
+
+    
 
 
     case '/pessoa':
